@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+use BerryGoudswaard\Command\ReleaseDistributeCommand;
+use GuzzleHttp\Client;
+use Symfony\Component\Console\Application;
+
+$client = new Client(['base_uri' => 'https://api.mobile.azure.com']);
+
+$application = new Application();
+$application->add(new ReleaseDistributeCommand($client));
+$application->run();

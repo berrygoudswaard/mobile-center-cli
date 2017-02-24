@@ -1,0 +1,23 @@
+{
+    "name": "berrygoudswaard/mobile-center-cli",
+    "description": "Command line tool for Microsoft Mobile Center",
+    "require": {
+        "symfony/console": "^3.2",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Berry Goudswaard",
+            "email": "info@berrygoudswaard.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "BerryGoudswaard\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/mobile-center"
+    ]
+}
