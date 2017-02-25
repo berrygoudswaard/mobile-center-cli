@@ -1,7 +1,15 @@
 #!/usr/bin/env php
 <?php
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+$autoloadFiles = array(
+    dirname(__DIR__) . '/vendor/autoload.php',
+    dirname(dirname(dirname(dirname(__DIR__)))). '/vendor/autoload.php',
+);
+foreach ($autoloadFiles as $file) {
+    if (file_exists($file)) {
+        require_once $file;
+    }
+}
 
 use BerryGoudswaard\Command\ReleaseDistributeCommand;
 use GuzzleHttp\Client;
