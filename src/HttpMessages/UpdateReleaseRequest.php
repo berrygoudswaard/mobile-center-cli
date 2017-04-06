@@ -10,12 +10,16 @@ class UpdateReleaseRequest extends Request
     {
         parent::__construct(
             'PATCH',
-            $uri, 
+            $uri,
             [
                 'Content-Type' => 'application/json',
                 'X-API-Token' => $apiToken,
             ],
-            json_encode(['distribution_group_name' => 'Collaborators'])
+            json_encode([
+                'distribution_group_id' => '00000000-0000-0000-0000-000000000000',
+                'release_notes' => '',
+                'mandatory_update' => false
+            ])
         );
     }
 }
